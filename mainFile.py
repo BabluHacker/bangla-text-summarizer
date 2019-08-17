@@ -20,6 +20,7 @@ from PRAfactor import PRA
     plt.title("NO vs Score")
     plt.legend()
     plt.show()'''
+
 def start(text):
     sObject = slice(1600)
     stopChar = '।'
