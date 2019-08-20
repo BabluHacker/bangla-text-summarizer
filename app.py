@@ -5,6 +5,7 @@ app = Flask(__name__)
 def summarize():
     text = request.form['text']
     ret = start(text)
+
     return jsonify(ret), 200
 if __name__ == '__main__':
     app.run()
