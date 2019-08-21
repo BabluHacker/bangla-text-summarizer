@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from mainFile import start
 app = Flask(__name__)
-@app.route('/summarize', methods=['POST'])
+@app.route('/english', methods=['POST'])
 def summarize():
     text = request.form['text']
     try:
