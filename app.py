@@ -6,6 +6,7 @@ def summarize():
     text = request.form['text']
     try:
         ret = start(text)
+        ret['status'] = 1
         return jsonify(ret), 200
     except Exception as e:
         ret_text = {}
