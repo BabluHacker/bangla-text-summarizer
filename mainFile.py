@@ -39,18 +39,20 @@ def start(text):
     print('-----------------------------------------------')
     print(output)'''
     out = ""
+    out_list = []
     for i in output:
         #print(sent[i],end='\n')
-        out += sent[i]
-        out += ' '
+        out_list.append(sent[i])
+    out = " ".join(list(set(out_list)))
     #print('\n')
 
     #print(output_union)
     out_union = ''
+    out_union_list = []
     for i in output_union:
         #print(sent[i],end='\n')
-        out_union += sent[i]
-        out_union += ' '
+        out_union_list.append(sent[i])
+    out_union = " ".join(list(set(out_union_list)))
     '''print('\n')
     #graphShow(xyPRA,xyRBA)
     print(" len of out: "+str(len(out)))
