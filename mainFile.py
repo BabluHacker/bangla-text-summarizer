@@ -64,11 +64,11 @@ def start(text):
     ret_text['actual_text_size'] = len(text)
     out_size = len(out)
     out_union_size = len(out_union)
-    if out_size >= 600 and out_size <= 900:
-        ret_text['summarized_text'] = out
-        ret_text['summarized_text_size'] = out_size
-    else:
+    if out_union_size >= 700 and out_union_size <= 1000:
         ret_text['summarized_text'] = out_union
         ret_text['summarized_text_size'] = out_union_size
+    else:
+        ret_text['summarized_text'] = out
+        ret_text['summarized_text_size'] = out_size
 
     return ret_text
