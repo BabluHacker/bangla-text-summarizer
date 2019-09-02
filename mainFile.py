@@ -70,7 +70,11 @@ def start(text):
         ret_text['summarized_text'] = out_union
         ret_text['summarized_text_size'] = out_union_size
     else:'''
-    ret_text['summarized_text'] = out
-    ret_text['summarized_text_size'] = out_size
+    if out_size == 0:
+        ret_text['summarized_text'] = out_union
+        ret_text['summarized_text_size'] = out_union_size
+    else:
+        ret_text['summarized_text'] = out
+        ret_text['summarized_text_size'] = out_size
 
     return ret_text
