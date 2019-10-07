@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from mainFile import start
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 @app.route('/', methods=['POST'])
 def summarize():
     text = request.form['text']
