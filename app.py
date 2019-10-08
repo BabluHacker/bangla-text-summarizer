@@ -3,6 +3,7 @@ from mainFile import start
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "https://summarize.technocrats.io"}})
 @app.route('/', methods=['POST'])
 def summarize():
     text = request.form['text']
