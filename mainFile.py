@@ -72,7 +72,7 @@ def start(text):
     else:'''
     percentage = float(out_union_size) / float(ret_text['actual_text_size']) # below 30%
     ret_text['percentage'] = percentage
-    if out_size == 0 or percentage >= .82:
+    if out_size == 0 or percentage <= .65:
         ret_text['summarized_text'] = out_union
         ret_text['summarized_text_size'] = out_union_size
         ret_text['type'] = "union"
