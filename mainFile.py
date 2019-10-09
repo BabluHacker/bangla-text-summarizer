@@ -31,9 +31,9 @@ def start(text):
     takingSentRBA=RBA(text=text).retNSent()
     '''xyPRA=PRA().retXY()
     xyRBA=RBA().retXY()'''
-    output= sorted(set(takingSentPRA).intersection(takingSentRBA))
-    #print('\nOutput Of document')
+    output = sorted(set(takingSentPRA).intersection(takingSentRBA))
     output_union = sorted(set(takingSentRBA).union(takingSentPRA))
+
     '''print(takingSentPRA)
     print(takingSentRBA)
     print('-----------------------------------------------')
@@ -70,7 +70,8 @@ def start(text):
         ret_text['summarized_text'] = out_union
         ret_text['summarized_text_size'] = out_union_size
     else:'''
-    if out_size == 0:
+    percentage = float(out_size) / float(ret_text['actual_text_size']) # below 30%
+    if out_size == 0 or percentage <= .3:
         ret_text['summarized_text'] = out_union
         ret_text['summarized_text_size'] = out_union_size
     else:
