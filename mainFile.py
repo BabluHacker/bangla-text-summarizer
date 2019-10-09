@@ -70,12 +70,14 @@ def start(text):
         ret_text['summarized_text'] = out_union
         ret_text['summarized_text_size'] = out_union_size
     else:'''
-    percentage = float(out_union_size) / float(ret_text['actual_text_size']) # below 30%
-    ret_text['percentage'] = percentage
-    if out_size == 0 or percentage <= .65:
+    union_percentage = float(out_union_size) / float(ret_text['actual_text_size'])
+    ret_text['union_percentage'] = union_percentage
+    ret_text['intersact_percentage'] = float(out_size) / float(ret_text['actual_text_size'])
+    if out_size == 0 or (union_percentage <= .65 and union_percentage >= .55) or ret_text['intersact_percentage'] <= .20:
         ret_text['summarized_text'] = out_union
         ret_text['summarized_text_size'] = out_union_size
         ret_text['type'] = "union"
+
     else:
         ret_text['summarized_text'] = out
         ret_text['summarized_text_size'] = out_size
