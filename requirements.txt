@@ -1,0 +1,17 @@
+orator
+eloquent
+Flask
+flask-login
+authy
+Jinja2
+gunicorn
+requests
+pytz
+pymysql
+pymongo
+pycrypto
+PyMySql
+networkx
+flask_cors
+nltk
+
